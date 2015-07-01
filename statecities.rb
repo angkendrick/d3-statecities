@@ -59,6 +59,8 @@ class StatesCities
 			iTax = ($taxes[sSym].to_f / 100).round(2)
 			iAmount = (iTax * amount).round(2)
 			return iAmount
+		else
+			return "#{sSym} not found"
 		end
 
 	end
@@ -68,6 +70,8 @@ class StatesCities
 		$cities.each do |key, array|
 			if array.include?(city)
 				return key
+			else
+				return "#{city} not found"
 			end
 		end
 
